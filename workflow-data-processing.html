@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow: [Workflow Name]</title> 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* A very light gray, almost white */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-wrapper {
+            flex-grow: 1;
+        }
+        /* Styles for the mock application window */
+        #interactiveWorkflowArea {
+            background-color: #e5e7eb; /* Slightly darker background for the wrapper */
+            border-radius: 0.5rem; 
+            overflow: hidden; 
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        #workflowActualContent {
+            background-color: white; 
+            min-height: 400px; /* Minimum height for the interactive part */
+            /* Consider max-height or aspect ratio for responsive iframes/canvas */
+        }
+        /* Custom scrollbar for better aesthetics (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 id="workflowTitle" class="text-xl md:text-2xl font-bold text-indigo-700">[Workflow Name]</h1>
+            <a href="index.html#workflows" class="text-sm text-indigo-600 hover:text-indigo-800 font-medium py-2 px-4 rounded-md border border-indigo-600 hover:bg-indigo-50 transition-colors duration-150">
+                &larr; Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <main class="content-wrapper container mx-auto px-6 py-8 md:py-12">
+        
+        <section id="workflowInstructions" class="mb-8 p-6 bg-indigo-50 border border-indigo-200 rounded-lg shadow">
+            <h2 class="text-xl font-semibold text-indigo-800 mb-3">How to Interact:</h2>
+            <p class="text-gray-700 leading-relaxed">
+                This is where you'll provide specific instructions for the user on how to use this interactive workflow. 
+                For example: "Adjust the sliders below to see how they affect the output graph. Click the 'Calculate' button to refresh the results."
+                Be clear and concise.
+            </p>
+        </section>
+
+        <section id="interactiveWorkflowArea" class="mb-8">
+            <div class="bg-slate-700 text-white px-4 py-2.5 flex justify-between items-center rounded-t-md">
+                <span id="workflowToolbarTitle" class="text-base font-semibold truncate">[Workflow Name] - Live Demo</span>
+                <div class="flex items-center space-x-2">
+                    <span class="w-3.5 h-3.5 bg-slate-500 rounded-full inline-block" title="Visual only"></span>
+                    <span class="w-3.5 h-3.5 bg-slate-500 rounded-full inline-block" title="Visual only"></span>
+                    <span class="w-3.5 h-3.5 bg-slate-500 rounded-full inline-block" title="Visual only"></span>
+                </div>
+            </div>
+            <div id="workflowActualContent" class="p-4 md:p-6 flex items-center justify-center">
+                <img src="https://placehold.co/800x500/A5B4FC/3730A3?text=Interactive+Workflow+Area" 
+                     alt="Interactive Workflow Placeholder" 
+                     class="max-w-full h-auto object-contain rounded shadow-md"
+                     onerror="this.onerror=null;this.src='https://placehold.co/800x500/E2E8F0/4A5568?text=Workflow+Content+Area';">
+            </div>
+        </section>
+
+        <section id="workflowNotes" class="mb-8 text-sm text-gray-600">
+            <h3 class="font-semibold text-gray-700 mb-2">Notes & Considerations:</h3>
+            <ul class="list-disc list-inside space-y-1">
+                <li>This workflow demonstrates [specific skill or concept].</li>
+                <li>The data used is sample data for demonstration purposes.</li>
+                <li>For optimal experience, use a modern web browser.</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 border-t border-gray-200 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-600 text-sm">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> [Your Name]. Workflow Page.</p>
+            <p><a href="index.html" class="hover:underline text-indigo-600">Return to Main Portfolio</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // You can add JavaScript specific to this workflow page here.
+        // For example, to initialize your interactive component.
+
+        // Dynamically set titles if needed, though for static pages, direct HTML replacement is fine.
+        // const workflowName = "[Workflow Name]"; // This would be set by you for each copied file
+        // document.getElementById('workflowTitle').textContent = workflowName;
+        // document.getElementById('workflowToolbarTitle').textContent = workflowName + " - Live Demo";
+        // document.title = "Workflow: " + workflowName;
+        console.log("Workflow detail page loaded.");
+    </script>
+
+</body>
+</html>
